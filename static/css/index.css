@@ -1,0 +1,43 @@
+.promo-text{
+    padding-top: 50px;
+}
+
+.promo-heading{
+    vertical-align: middle;
+    font-weight: 200;
+    font-size: 3em;
+}
+
+.promo-body{
+    vertical-align: middle;
+    font-weight: 300;
+    font-size: 2em;
+    color: #9d9d9d;
+    padding-top: 50px;
+}
+
+.promo-btn{
+    padding-top: 50px;
+}
+
+.btn-yellow{
+    background-color: #fec400;
+    color: #222;
+    font-weight: 400;
+    margin-right: 20px;
+}
+
+.btn-yellow:hover{
+    color: #fff;
+}
+
+.btn-black{
+    background-color: #222;
+    color: #fff;
+    font-weight: 400;
+    border: 1px solid #fec400;
+}
+
+.btn-black:hover{
+    color: #fec400;
+}

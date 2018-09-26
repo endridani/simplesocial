@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static 'css/index.css'%}" >
+{% endblock %}
+
+{% block content %}
+    <div class="col-md-7">
+        <div class="promo-text">
+            <div class="promo-heading">
+                ProGroup is a <strong>social environment</strong> serving to people with <strong>ideas and
+                interests</strong>.
+            </div>
+            <div class="promo-body">
+                It is the perfect place for those looking to expand on their interests, connect to other
+                like minded individuals and find inspiration!
+            </div>
+            <div class="promo-btn">
+                <a href="{% url 'accounts:signup' %}" class="btn btn-yellow btn-lg ">Sign Up for Free</a>
+                <a href="#" class="btn btn-black btn-lg">Learn More</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

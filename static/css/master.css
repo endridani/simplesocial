@@ -1,0 +1,96 @@
+html,
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #333;
+    color: #fff;
+}
+
+/* ------ Navbar ------ */
+
+.nav-font {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.navbar-brand {
+    position: inherit;
+    background: url(../img/logo.png) center center no-repeat;
+    width: 180px;
+    background-size: contain;
+}
+
+.navbar-brand:hover {
+    position: relative;
+    background: url(../img/logo_hover.png) center center no-repeat;
+    width: 180px;
+    background-size: contain;
+}
+
+.navbar-inverse .navbar-nav > li::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #fec400;
+    transition: 0.2s;
+}
+
+.navbar-inverse .navbar-nav > li:hover::after, .navbar-inverse .navbar-nav > .active::after {
+    width: 100%;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover{
+    background-color: #222;
+}
+
+.btn-green{
+    text-decoration: none;
+    color: #5cb85c;
+    border: 1px solid #5cb85c;
+    margin-left: 10px;
+}
+
+.btn-green:hover{
+    color: #fff;
+    background-color: rgba(92, 184, 92, 0.2);
+}
+
+.btn-blue {
+    text-decoration: none;
+    color: #5bc0de;
+    border: 1px solid #5bc0de;
+    margin-left: 10px;
+}
+
+.btn-blue:hover {
+    color: #fff;
+    background-color: rgba(91, 192, 222, 0.2);
+}
+
+.btn-red {
+    text-decoration: none;
+    color: #d9534f;
+    border: 1px solid #d9534f;
+    margin-left: 10px;
+}
+
+.btn-red:hover {
+    color: #fff;
+    background-color: rgba(217, 83, 79, 0.2);
+}
+
+
+/* ------------- Title ------------*/
+
+.title{
+    font-size: 3em;
+    font-weight: 300;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.control-label{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}

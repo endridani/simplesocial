@@ -1,0 +1,63 @@
+{% extends "groups/group_base.html" %}
+{% load static %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static 'css/groups.css' %}">
+{% endblock %}
+{% block groups %}class='active'{% endblock %}
+{% block pregroup %}
+    <div class="col-md-4">
+        <div class="content-panel">
+            {% if user.is_authenticated %}
+                <div class="well content-title">
+                    <p>Welcome back
+                        <a class="username"
+                           href="{% url 'posts:for_user' username=user.username %}">@{{ user.username }}</a>
+                    </p>
+                </div>
+            {% endif %}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <p class="content-body">Groups</p>
+                    <small class="help-block">Welcome to the Groups Page! Select a Group with a shared interest!
+                        If you can't find it, you can always create one!
+                    </small>
+                </div>
+                <div class="panel-body">
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'groups:create' %}" class="btn btn-create-grp btn-lg btn-warning"><span
+                                class="glyphicon glyphicon-plus-sign"></span> Create New Group</a>
+                    {% else %}
+                        <a href="{% url 'accounts:login' %}" class="btn btn-sm btn-create-grp btn-warning">Sign in</a>
+                        to create a group!
+                    {% endif %}
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+{% endblock %}
+
+{% block group_content %}
+    <div class="col-md-8">
+        <div class="group-panel">
+            {% for group in object_list %}
+                <a class="group-link" href="{% url 'groups:single' slug=group.slug %}">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            <p class="panel-title">{{ group.name }}</p>
+                        </div>
+                        <div class="panel-body">
+                            {{ group.description_html|safe }}
+                        </div>
+                        <div class="panel-footer">
+                            <span class="badge">{{ group.members.count }} member{{ group.members.count|pluralize }}</span>
+                            <span class="badge">{{ group.posts.count }} post{{ group.posts.count|pluralize }}</span>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
