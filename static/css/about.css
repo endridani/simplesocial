@@ -1,0 +1,26 @@
+.about{
+    padding-top: 30px;
+}
+
+.panel{
+    border-color: #101010;
+}
+
+.panel-info .panel-heading{
+    background-color: #222;
+    border-color : #101010;
+}
+
+.panel-body{
+    background-color: #333;
+}
+
+.logo {
+    max-width: 50%;
+    max-height: 30%;
+}
+
+.about-form {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+}

@@ -1,39 +1,43 @@
 {% extends "groups/group_base.html" %}
-
+{% load static %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static 'css/groups.css' %}">
+    <link rel="stylesheet" href="{% static 'css/posts.css' %}">
+{% endblock %}
+{% block groups %}class='active'{% endblock %}
 {% block pregroup %}
+    <div class="col-md-4">
+        <div class="content-panel">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <p class="content-body">{{ group.name }}</p>
 
-
-<h1>{{group.name}}</h1>
-<h2> Member Count: {{group.members.count}}</h2>
-
-  <div class="content">
-
-
-				{% if user in group.members.all %}
-					<a href="{% url 'groups:leave' slug=group.slug %}" class="btn btn-lg btn-fill btn-warning"><span class="glyphicon glyphicon-remove-circle"></span> Leave</a>
-				{% else %}
-					<a href="{% url 'groups:join' slug=group.slug %}" class="btn btn-lg btn-fill btn-warning"><span class="glyphicon glyphicon-ok-circle"></span> Join</a>
-				{% endif %}
-
-
-
-</div>
-
+                    <p class="help-block">Member Count: <span class="badge">{{ group.members.count }}</span></p>
+                </div>
+                <div class="panel-body">
+                    {% if user in group.members.all %}
+                        <a href="{% url 'groups:leave' slug=group.slug %}" class="btn btn-lg btn-danger"><span
+                                class="glyphicon glyphicon-remove-circle"></span> Leave</a>
+                    {% else %}
+                        <a href="{% url 'groups:join' slug=group.slug %}" class="btn btn-lg btn-success"><span
+                                class="glyphicon glyphicon-ok-circle"></span> Join</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
 
-
 {% block group_content %}
-
-<div class="col-md-8">
-	{% if group.posts.count == 0 %}
-	<h2>No posts in this group yet!</h2>
-
-	{% else %}
-
-		{% for post in group.posts.all %}
-			{% include "posts/_post.html" %}
-		{% endfor %}
-
-	{% endif %}
-</div>
+    <div class="col-md-8">
+        <div class="group-panel">
+            {% if group.posts.count == 0 %}
+                <h2 class="no_post">No posts in this group yet!</h2>
+            {% else %}
+                {% for post in group.posts.all %}
+                    {% include "posts/_post.html" %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
 {% endblock %}

@@ -1,7 +1,21 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">{% endblock %}
 {% block about %}class='active'{% endblock %}
 {% block content %}
-    <div class="title">
-        About ProGroup
+    <div class="col-md-8 col-md-offset-2">
+        <div class="about">
+            <div class="panel panel-info">
+                <div class="panel-heading"><img class="img-responsive center-block logo"
+                                                src="{% static 'img/logo.png' %}">
+                </div>
+                <div class="panel-body about-form">
+                    <p>
+                        About ProGroup
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}
