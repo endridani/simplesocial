@@ -41,3 +41,14 @@
 .btn-black:hover{
     color: #fec400;
 }
+
+/* ------------- Image ------------- */
+
+.promo-image{
+    padding-top: 50px;
+}
+
+.image-index {
+    max-width: 90%;
+    height: auto;
+}

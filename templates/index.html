@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block stylesheet %}
-    <link rel="stylesheet" href="{% static 'css/index.css'%}" >
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -17,8 +17,13 @@
             </div>
             <div class="promo-btn">
                 <a href="{% url 'accounts:signup' %}" class="btn btn-yellow btn-lg ">Sign Up for Free</a>
-                <a href="#" class="btn btn-black btn-lg">Learn More</a>
+                <a href="{% url 'about' %}" class="btn btn-black btn-lg">Learn More</a>
             </div>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="promo-image">
+            <img class="image-index" src="{% static 'img/snpsh.png' %}">
         </div>
     </div>
 {% endblock %}

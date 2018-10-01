@@ -1,5 +1,5 @@
 {% load humanize %}
-<ul class="timeline">
+<ul class="timeline" xmlns="http://www.w3.org/1999/html">
     <li class="timeline-inverted">
         <div class="timeline-badge warning"><i class="glyphicon glyphicon-comment"></i></div>
         <div class="timeline-panel">
@@ -8,6 +8,7 @@
                     <a class="timeline-title" href="{% url 'posts:for_user' username=post.user.username %}">@{{ post.user.username }}</a>
                     <a class="timeline-time pull-right" href="{% url 'posts:single' username=post.user.username pk=post.pk %}">{{ post.created_at|naturaltime }}</a>
                 </p>
+                <p class="small help-block">in {{ post.group.name }}</p>
             </div>
             <div class="timeline-body">
                 <p>{{ post.message_html|safe }}</p>

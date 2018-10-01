@@ -1,13 +1,9 @@
 from django.db import models
-from django.conf import settings
 from django.urls import reverse
-
-# pip install misaka
 import misaka
-
 from groups.models import Group
-
 from django.contrib.auth import get_user_model
+
 User = get_user_model()
 
 
@@ -26,7 +22,7 @@ class Post(models.Model):
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse("groups:single", kwargs={"slug": self.group})
+        return reverse("groups:single", kwargs={"slug": self.group.slug})
 
     class Meta:
         ordering = ["-created_at"]
