@@ -9,7 +9,7 @@ can register and login. Users can contribute by creating groups(representing hob
 groups. Users have the option to Join or Leave a group, Delete Comments created by them and each has it's own profile listing their Post History.
 
 This project serves as a great example to understand the structure of a project built upon various apps and the relation between it's 
-compartmetns.
+compartments.
 
 Screenshot samples from this Django project.
 
